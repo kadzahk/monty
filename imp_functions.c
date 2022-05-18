@@ -54,7 +54,7 @@ char **tk_cm(char *comand, char *delim)
 		free(token);
 		return (NULL);
 	}
-	for (i = 1; i < word + 1; i++)
+	for (i = 1; i < word; i++)
 		token[i] = strtok(NULL, delim);
 	return (token);
 }
