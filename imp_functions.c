@@ -72,6 +72,10 @@ void (*get_op_funct(char *tk, unsigned int line))(stack_t **, unsigned int)
 	instruction_t joker[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
 		{"NULL", NULL}
 	};
 
