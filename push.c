@@ -33,3 +33,9 @@ exit(EXIT_FAILURE);
 	}
 	(void)line_number;
 }
+
+void didnt_int(int line)
+{
+	fprintf(stderr, "L%u: usage: push integer\n", line);
+	exit(EXIT_FAILURE);
+}

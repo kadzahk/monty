@@ -47,5 +47,6 @@ void (*get_op_funct(char *tk, unsigned int line))(stack_t **, unsigned int);
 void push(stack_t **stack, unsigned int line_number);
 void frees(stack_t **stack);
 void invalid_instrution(int line, char *opcode);
+void didnt_int(int line);
 
 #endif
