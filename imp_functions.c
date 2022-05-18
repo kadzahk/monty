@@ -79,6 +79,8 @@ void (*get_op_funct(char *tk, unsigned int line))(stack_t **, unsigned int)
 
 	if (tks[1])
 		glb_number = atoi(tks[1]);
+	
+	
 
 	for (i = 0; joker[i].opcode != NULL; i++)
 	{
