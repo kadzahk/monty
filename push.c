@@ -10,6 +10,7 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *list_node;
 
 	list_node = (stack_t *)malloc(sizeof(stack_t));
+
 if (list_node == NULL)
 {
 fprintf(stderr, "Error: malloc failed\n");
