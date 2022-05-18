@@ -64,7 +64,7 @@ char **tk_cm(char *comand, char *delim)
  * @line: command read
  * Return: void
  */
-void (*get_op_funct(unsigned int line, char *tk))(stack_t **, unsigned int)
+void (*get_op_funct(char *tk, unsigned int line))(stack_t **, unsigned int)
 {
 	unsigned int i = 0;
 	char **tks = NULL;
@@ -87,7 +87,7 @@ void (*get_op_funct(unsigned int line, char *tk))(stack_t **, unsigned int)
 			free(tks);
 			return (joker[i].f);
 		}
-	i++;
+		i++;
 	}
 	(void)line;
 	return (NULL);
