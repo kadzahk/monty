@@ -38,4 +38,6 @@ typedef struct instruction_s
 
 int ct_wd(char *strn);
 char **tk_cm(char *comand, char *delim);
+void read_the_file(char **argv);
+
 #endif
