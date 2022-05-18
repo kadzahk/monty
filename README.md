@@ -24,7 +24,7 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 ---
 
 ## Requirements
-- All your files will be compiled on Ubuntu 14.04 LTS
+- All your files will be compiled on Ubuntu 20.04 LTS
 - Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
 - You allowed to use a maximum of one global variable
 - No more than 5 functions per file
