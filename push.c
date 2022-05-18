@@ -24,8 +24,6 @@ exit(EXIT_FAILURE);
 	if (*stack == NULL)
 	{
 		*stack = list_node;
-		fprintf(stderr, "L%u: usage: push integer\n", line);
-		exit(EXIT_FAILURE);
 	}
 	else
 	{
