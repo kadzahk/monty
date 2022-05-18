@@ -43,8 +43,9 @@ char **tk_cm(char *comand, char *delim);
 void read_the_file(char **argv);
 void pall(stack_t **stack, unsigned int line_number);
 int main(int argc, char **argv);
-void (*get_op_funct(unsigned int line, char *tk))(stack_t **, unsigned int);
+void (*get_op_funct(char *tk, unsigned int line))(stack_t **, unsigned int);
 void push(stack_t **stack, unsigned int line_number);
 void frees(stack_t **stack);
+void invalid_instrution(int line, char *opcode);
 
 #endif

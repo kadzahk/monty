@@ -68,7 +68,6 @@ void (*get_op_funct(char *tk, unsigned int line))(stack_t **, unsigned int)
 {
 	unsigned int i = 0;
 	char **tks = NULL;
-	int number = 0;
 
 	instruction_t joker[] = {
 		{"push", push},
@@ -81,14 +80,13 @@ void (*get_op_funct(char *tk, unsigned int line))(stack_t **, unsigned int)
 	if (tks[1])
 		glb_number = atoi(tks[1]);
 
-	while (joker[i].opcode != NULL)
+	for (i = 0; joker[i].opcode != NULL; i++)
 	{
 		if (strcmp(tk, joker[i].opcode) == 0)
 		{
 			free(tks);
 			return (joker[i].f);
 		}
-		i++;
 	}
 	(void)line;
 	return (NULL);
