@@ -8,7 +8,8 @@
 int main(int argc, char **argv)
 {
 	if (argc != 2)
-		error_argv();
+		fprintf(stderr, "USAGE: monty file\n");
+	    exit(EXIT_FAILURE);
 
 	read_the_file(argv);
 	return (0);
