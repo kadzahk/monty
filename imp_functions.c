@@ -70,16 +70,17 @@ void (*get_op_funct(char *tk, unsigned int line))(stack_t **, unsigned int)
 	char **tks = NULL;
 	int number = 0;
 
-	tks = tk_cm(tk, "\n\t\r ");
-
-	if (tks[1])
-		number = atoi(tks[1]);
-
 	instruction_t joker[] = {
 		{"push", push},
 		{"pall", pall},
 		{"NULL", NULL}
 	};
+
+	tks = tk_cm(tk, "\n\t\r ");
+
+	if (tks[1])
+		glb_number = atoi(tks[1]);
+
 	while (joker[i].opcode != NULL)
 	{
 		if (strcmp(tk, joker[i].opcode) == 0)
