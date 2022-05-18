@@ -33,7 +33,11 @@ exit(EXIT_FAILURE);
 	}
 	(void)line_number;
 }
-
+/**
+ * didnt_int - print message if parameter receivedis not integer
+ * @line: line
+ * Return: void
+ */
 void didnt_int(int line)
 {
 	fprintf(stderr, "L%u: usage: push integer\n", line);
