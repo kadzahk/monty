@@ -43,5 +43,6 @@ void pall(stack_t **stack, unsigned int line_number);
 int main(int argc, char **argv);
 void (*get_op_funct(unsigned int line, char *tk))(stack_t **, unsigned int);
 void push(stack_t **stack, unsigned int line_number);
+void frees(stack_t **stack);
 
 #endif
