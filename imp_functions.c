@@ -80,13 +80,14 @@ void (*get_op_funct(unsigned int line, char *tk))(stack_t **, unsigned int)
 		{"pall", pall},
 		{"NULL", NULL}
 	};
-	while (joker[i].opcode)
+	while (joker[i].opcode != NULL)
 	{
 		if (strcmp(tk, joker[i].opcode) == 0)
 		{
 			free(tks);
 			return (joker[i].f);
 		}
+	i++;
 	}
 	(void)line;
 	return (NULL);
