@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * push -push (add) node to list.
  * @stack: element at the top of the stack.
@@ -7,29 +8,26 @@
  **/
 void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *list_node;
+	stack_t *new_node;
 
-	list_node = (stack_t *)malloc(sizeof(stack_t));
+	new_node = (stack_t *)malloc(sizeof(stack_t));
+	if (new_node == NULL)
+		fprintf(stderr, "Error: malloc failed\n");
+	    exit(EXIT_FAILURE);
 
-if (list_node == NULL)
-{
-fprintf(stderr, "Error: malloc failed\n");
-exit(EXIT_FAILURE);
-}
-
-	list_node->n = glb_number;
-	list_node->next = NULL;
-	list_node->prev = NULL;
+	new_node->n = glb_number;
+	new_node->next = NULL;
+	new_node->prev = NULL;
 
 	if (*stack == NULL)
 	{
-		*stack = list_node;
+		*stack = new_node;
 	}
 	else
 	{
-		(*stack)->next = list_node;
-		list_node->prev = *stack;
-		*stack = list_node;
+		(*stack)->next = new_node;
+		new_node->prev = *stack;
+		*stack = new_node;
 	}
 	(void)line_number;
 }
