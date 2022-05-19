@@ -43,7 +43,6 @@ void malloc_error(void)
 	fprintf(stderr, "Error: malloc failed\n");
 	exit(EXIT_FAILURE);
 }
-
 /**
  * pop_error - print error message if the stack is empty
  * @line: line
