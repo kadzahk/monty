@@ -7,29 +7,27 @@
  **/
 void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *list_node;
+	stack_t *new;
 
-	list_node = (stack_t *)malloc(sizeof(stack_t));
+	if (stack == NULL)
+	{
+		fprintf(stderr, "L%d: stack not found\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
-if (list_node == NULL)
-{
-fprintf(stderr, "Error: malloc failed\n");
-exit(EXIT_FAILURE);
+	new = malloc(sizeof(stack_t));
+	if (new == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		frees(stack);
+		exit(EXIT_FAILURE);
+	}
+
+	new->next = *stack;
+	new->prev = NULL;
+	new->n = glb_number;
+	if (*stack)
+		(*stack)->prev = new;
+	*stack = new;
 }
 
-	list_node->n = glb_number;
-	list_node->next = NULL;
-	list_node->prev = NULL;
-
-	if (*stack == NULL)
-	{
-		*stack = list_node;
-	}
-	else
-	{
-		(*stack)->next = list_node;
-		list_node->prev = *stack;
-		*stack = list_node;
-	}
-	(void)line_number;
-}
