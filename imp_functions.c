@@ -82,6 +82,9 @@ void (*get_op_funct(char *tk, unsigned int line))(stack_t **, unsigned int)
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
+		{"swap", swap},
+		{"nop", nop},
+		{"add", add},
 		{"NULL", NULL}
 	};
 
