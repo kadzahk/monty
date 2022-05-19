@@ -35,8 +35,7 @@ void read_the_file(char **argv)
 	file_proc = fopen(argv[1], "r");
 	if (file_proc == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
+		open_file(argv);
 	}
 
 	for (line = 1; getline(&buf, &len, file_proc) != -1; line++)
@@ -52,16 +51,4 @@ void read_the_file(char **argv)
 	free(buf);
 	frees(&stack);
 	(void)token;
-}
-/**
- * invalid_instrution - print message if le to open the
- * filehas an invalid instruction
- * @line: line of file
- * @opcode: command to execute.
- * Return: void
- **/
-void invalid_instrution(int line, char *opcode)
-{
-	fprintf(stderr, "L%d: unknown instruction %s\n", line, opcode);
-	exit(EXIT_FAILURE);
 }

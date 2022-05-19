@@ -48,7 +48,8 @@ void push(stack_t **stack, unsigned int line_number);
 void frees(stack_t **stack);
 void invalid_instrution(int line, char *opcode);
 void didnt_int(int line);
-void pop(stack_t **stack, unsigned int line_number);
+void open_file(char **argv);
 void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
 
 #endif
