@@ -33,3 +33,13 @@ void open_file(char **argv)
 	fprintf(stderr, "Error: Can't open file %s\n", filename);
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * malloc_error - print message if cant malloc anymore
+ * Return: void
+ **/
+void malloc_error(void)
+{
+	fprintf(stderr, "Error: malloc failed\n");
+	exit(EXIT_FAILURE);
+}

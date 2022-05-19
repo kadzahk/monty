@@ -51,5 +51,6 @@ void didnt_int(int line);
 void open_file(char **argv);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+void malloc_error(void);
 
 #endif

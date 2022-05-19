@@ -40,16 +40,14 @@ char **tk_cm(char *comand, char *delim)
 	token = malloc(sizeof(char *) * (word + 1));
 	if (token == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
+		malloc_error();
 		return (NULL);
 	}
 
 	token[0] = strtok(comand, delim);
 	if (token[0] == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
+		malloc_error();
 		free(token[0]);
 		free(token);
 		return (NULL);
