@@ -32,29 +32,33 @@ int ct_wd(char *strn)
  */
 char **tk_cm(char *comand, char *delim)
 {
-	char **token = NULL;
-	int i, word = 0;
+	int i = 0, cword = 0;
+	char **splited_words = NULL;
 
-	word = ct_wd(comand);
+	cword = ct_wd(comand);
 
-	token = malloc(sizeof(char *) * (word + 1));
-	if (token == NULL)
+	splited_words = malloc(sizeof(char *) * (cword + 1));
+	if (splited_words == NULL)
 	{
 		malloc_error();
 		return (NULL);
 	}
 
-	token[0] = strtok(comand, delim);
-	if (token[0] == NULL)
+	splited_words[0] = strtok(comand, delim);
+
+	if (splited_words[0] == NULL)
 	{
 		malloc_error();
-		free(token[0]);
-		free(token);
+		free(splited_words[0]);
+		free(splited_words);
 		return (NULL);
 	}
-	for (i = 1; i < word; i++)
-		token[i] = strtok(NULL, delim);
-	return (token);
+
+	for (i = 1; i < cword; i++)
+	{
+		splited_words[i] = strtok(NULL, delim);
+	}
+	return (splited_words);
 }
 /**
  * get_op_funct - Function that looks for a match
@@ -76,7 +80,8 @@ void (*get_op_funct(char *tk, unsigned int line))(stack_t **, unsigned int)
 	};
 
 	tks = tk_cm(tk, "\n\t\r ");
-
+	/** printf("se agarro el numero %s \n", tks[1]);
+	**/
 	if (tks[1])
 		glb_number = atoi(tks[1]);
 
