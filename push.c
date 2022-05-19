@@ -7,27 +7,21 @@
  **/
 void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new;
 
-	if (stack == NULL)
-	{
-		fprintf(stderr, "L%d: stack not found\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+	stack_t *new = malloc(sizeof(stack_t));
 
-	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed\n");
-		frees(stack);
+		fprintf(stderr, "L%d: can't malloc\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-
+	new->n = glb_number;
 	new->next = *stack;
 	new->prev = NULL;
-	new->n = glb_number;
-	if (*stack)
+	if (*stack != NULL)
+	{
 		(*stack)->prev = new;
+	}
 	*stack = new;
 }
 
