@@ -57,5 +57,6 @@ void int_error(int line);
 void a_error(unsigned int line);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
 
 #endif

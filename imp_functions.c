@@ -44,15 +44,15 @@ char **tk_cm(char *comand, char *delim)
 		return (NULL);
 	}
 
-	token[1] = strtok(comand, delim);
-	if (token[1] == NULL)
+	token[0] = strtok(comand, delim);
+	if (token[0] == NULL)
 	{
 		int_error(word);
-		free(token[1]);
+		free(token[0]);
 		free(token);
 		return (NULL);
 	}
-	for (i = 1; i < word + 1; i++)
+	for (i = 1; i < word; i++)
 		token[i] = strtok(NULL, delim);
 	return (token);
 }
