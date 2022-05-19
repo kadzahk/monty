@@ -52,5 +52,7 @@ void open_file(char **argv);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void malloc_error(void);
+void pop_error(unsigned int line);
+void int_error(int line);
 
 #endif

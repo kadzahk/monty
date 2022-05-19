@@ -47,7 +47,7 @@ char **tk_cm(char *comand, char *delim)
 	token[0] = strtok(comand, delim);
 	if (token[0] == NULL)
 	{
-		malloc_error();
+		int_error(word);
 		free(token[0]);
 		free(token);
 		return (NULL);
@@ -57,6 +57,16 @@ char **tk_cm(char *comand, char *delim)
 	return (token);
 }
 /**
+ * int_error - print message if parameter receivedis not integer
+ * @line: line
+ * Return: void
+ */
+void int_error(int line)
+{
+	fprintf(stderr, "L%u: usage: push integer\n", line);
+	exit(EXIT_FAILURE);
+}
+/**
  * get_op_funct - Function that looks for a match
  * @tk: operation code
  * @line: command read
@@ -64,7 +74,7 @@ char **tk_cm(char *comand, char *delim)
  */
 void (*get_op_funct(char *tk, unsigned int line))(stack_t **, unsigned int)
 {
-	unsigned int i = 0;
+	int i = 0;
 	char **tks = NULL;
 
 	instruction_t joker[] = {

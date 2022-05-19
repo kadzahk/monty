@@ -10,10 +10,9 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *list_node;
 
 	list_node = (stack_t *)malloc(sizeof(stack_t));
-
 if (list_node == NULL)
 {
-    malloc_error();
+malloc_error();
 }
 
 	list_node->n = glb_number;
@@ -32,4 +31,3 @@ if (list_node == NULL)
 	}
 	(void)line_number;
 }
-
