@@ -46,9 +46,10 @@ void malloc_error(void)
 
 /**
  * pop_error - print message if cant malloc anymore
+ * @line: szs
  * Return: void
  **/
- void pop_error(unsigned int line)
+void pop_error(unsigned int line)
 {
 	fprintf(stderr, "L%d: can't pop an empty stack\n", line);
 	exit(EXIT_FAILURE);

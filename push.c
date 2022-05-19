@@ -13,7 +13,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 if (list_node == NULL)
 {
-    malloc_error();
+malloc_error();
 }
 
 	list_node->n = glb_number;

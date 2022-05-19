@@ -8,15 +8,12 @@
  **/
 void pop(stack_t **stack, unsigned int line_number)
 {
-	
 	stack_t *tmp = *stack;
 
 	if (*stack == NULL)
-        pop_error(line_number);
-		
+		pop_error(line_number);
 
 	*stack = (*stack)->prev;
-	
 	if ((*stack) != NULL)
 		(*stack)->next = NULL;
 

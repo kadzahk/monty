@@ -80,8 +80,7 @@ void (*get_op_funct(char *tk, unsigned int line))(stack_t **, unsigned int)
 	};
 
 	tks = tk_cm(tk, "\n\t\r ");
-	/** printf("se agarro el numero %s \n", tks[1]);
-	**/
+
 	if (tks[1])
 		glb_number = atoi(tks[1]);
 
